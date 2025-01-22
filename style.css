@@ -1,68 +1,97 @@
-/* Reset Margin dan Padding */
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #22c14d;
-  color: #333;
-}
-
-/* Container Hero */
-.hero {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 50px auto;
-  padding: 10px;
-  max-width: 300px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgb(143, 143, 143);
-  height: 350px;
+  height: 100vh;
+  background: linear-gradient(to bottom, #a8e063, #56ab2f);
 }
 
-/* Konten utama */
-.main {
-  padding: 10px;
-  text-align: center;
+.container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
-.main h4 {
-  margin-bottom: 50px;
+.form-box {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  width: 300px;
+  border: 1px solid rgb(155, 155, 155);
+  box-shadow: 4px 5px 5px rgb(73, 174, 65);
 }
 
-/* Form styling */
-form {
-  display: flex;
-  flex-direction: column;
-  width: 100%; /* Sesuaikan lebar form dengan container */
+.form-box h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  margin-left: 110px;
 }
 
-form label {
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-form input {
-  margin-bottom: 15px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-form button {
+input[type='email'],
+input[type='password'] {
+  width: 90%;
   padding: 10px;
-  background-color: #22c14d;
-  color: white;
+  margin: 10px 0;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  border-bottom: 2px solid #56ab2f;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  color: #333;
 }
 
-form button:hover {
-  background-color: #1a9a3b;
+.forgot-password {
+  display: block;
+  margin: 10px 0;
+  font-size: 14px;
+  color: #56ab2f;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.login-btn {
+  background: linear-gradient(to right, #a8e063, #56ab2f);
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 20px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-btn:hover {
+  background: linear-gradient(to right, #56ab2f, #a8e063);
+}
+
+.signup-text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+p a {
+  text-decoration: none;
+  margin-left: 55px;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #56ab2f;
+  width: 30%;
+  margin-top: -15px;
+  margin-bottom: 50px;
 }
