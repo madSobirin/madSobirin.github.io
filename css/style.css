@@ -55,6 +55,14 @@ section .container .hero-content p {
   font-size: 24px;
   font-weight: bold;
   color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.logo img {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .logo span {
