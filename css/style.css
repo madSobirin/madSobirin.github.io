@@ -6,6 +6,10 @@
   --accent-color: #e74c3c;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -71,20 +75,41 @@ section .container .hero-content p {
 
 .nav-links {
   display: flex;
-  list-style: none;
+  align-items: center;
 }
 
 .nav-links li {
-  margin-left: 30px;
+  margin-left: 20px;
+  list-style: none;
 }
 
 .nav-links a {
+  position: relative;
   color: var(--dark-color);
   font-weight: 500;
-  transition: color 0.3s;
+  padding: 10px 5px;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--primary-color);
 }
 

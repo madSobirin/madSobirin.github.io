@@ -67,3 +67,30 @@ document
   });
 
 window.addEventListener("load", reveal);
+
+const sections = document.querySelectorAll("section");
+const navLinksItems = document.querySelectorAll(".nav-links a");
+
+function setActiveNav() {
+  let scrollY = window.pageYOffset;
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 100;
+    const sectionHeight = section.offsetHeight;
+    const sectionId = section.getAttribute("id");
+
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+      navLinksItems.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${sectionId}`) {
+          link.classList.add("active");
+        }
+      });
+    }
+  });
+}
+
+window.addEventListener("scroll", () => {
+  reveal(); // tetap jalankan animasi scroll
+  setActiveNav(); // tambahkan ini agar navbar nyala sesuai scroll
+});
