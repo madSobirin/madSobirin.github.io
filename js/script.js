@@ -90,7 +90,19 @@ function setActiveNav() {
   });
 }
 
-window.addEventListener("scroll", () => {
-  reveal(); // tetap jalankan animasi scroll
-  setActiveNav(); // tambahkan ini agar navbar nyala sesuai scroll
-});
+const navbar = document.querySelector(".navbar");
+
+function handleNavbarScroll() {
+  if (window.scrollY === 0) {
+    navbar.classList.add("top");
+    navbar.classList.remove("scrolled");
+  } else {
+    navbar.classList.add("scrolled");
+    navbar.classList.remove("top");
+  }
+}
+
+window.addEventListener("scroll", handleNavbarScroll);
+
+// Jalankan sekali di awal untuk posisi awal
+handleNavbarScroll();
