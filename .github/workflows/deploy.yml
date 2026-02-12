@@ -10,17 +10,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Checkout source code
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      # 2️⃣ Setup SSH
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
+
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
+          # Tambahkan server ke known_hosts
+          ssh-keyscan -H -T 10 ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+
+      # 3️⃣ Deploy ke Server via rsync
       - name: Deploy to Server
         run: |
-          rsync -avz --delete ./ \
+          rsync -avz --delete \
+          --exclude=".git" \
+          --exclude=".github" \
+          ./ \
           ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:${{ secrets.DEPLOY_PATH }}
