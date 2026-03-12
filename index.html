@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website Kelompok</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c92d2);
+        background-size: 400% 400%;
+        animation: gradientMove 10s ease infinite;
+        color: white;
+      }
+
+      @keyframes gradientMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .container {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 40px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        animation: fadeIn 1.5s ease;
+      }
+
+      h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        animation: slideDown 1.2s ease;
+      }
+
+      p {
+        font-size: 18px;
+        opacity: 0.9;
+        margin-bottom: 20px;
+      }
+
+      .names {
+        margin-top: 20px;
+      }
+
+      .names span {
+        display: block;
+        padding: 6px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .names span:hover {
+        color: #00e5ff;
+        transform: scale(1.05);
+      }
+
+      .footer {
+        margin-top: 25px;
+        font-size: 14px;
+        opacity: 0.8;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(-40px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>🌐 Website Kelompok</h1>
+
+      <p>Halo, ini website sederhana dari kelompok kami.</p>
+
+      <div class="names">
+        <span>👨‍💻 Muhammad Faridudin Attar</span>
+        <span>👩‍💻 Ani Kartini</span>
+        <span>👨‍💻 Ahmad Sobirin</span>
+      </div>
+
+      <div class="footer">Domain sudah aktif ✔</div>
+    </div>
+  </body>
+</html>
